@@ -21,7 +21,7 @@ Usage
 
  *  **`PublishLiveData`**
 
-    Relay that, once an `Observer` has subscribed, emits all subsequently observed items to the
+    LiveData that, once an `Observer` has subscribed, emits all subsequently observed items to the
     subscriber.
 
     ```kotlin
@@ -35,9 +35,9 @@ Usage
     liveData.postValue("three");
     ```
 
- *  **`ReplyLiveData`**
+ *  **`ReplayLiveData`**
 
-    Relay that buffers all items it observes and replays them to any `Observer` that subscribes.
+    LiveData that buffers all items it observes and replays them to any `Observer` that subscribes.
 
     ```kotlin
     val liveData =  ReplayLiveData<String>();
@@ -60,7 +60,7 @@ License
 
     MIT License
 
-    Copyright (c) [2019] [IBRAHIM YILMAZ cs.ibrahimyilmaz@gmail.com]
+    Copyright (c) [2019] [IBRAHIM YILMAZ | cs.ibrahimyilmaz@gmail.com]
 
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal

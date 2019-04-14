@@ -1,6 +1,7 @@
 package me.ibrahimyilmaz.arch_data
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
+import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
 import com.nhaarman.mockitokotlin2.*
 import org.junit.Before

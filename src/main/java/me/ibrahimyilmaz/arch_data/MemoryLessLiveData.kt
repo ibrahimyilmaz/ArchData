@@ -3,12 +3,14 @@ package me.ibrahimyilmaz.arch_data
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
+import com.google.common.annotations.VisibleForTesting
 
 internal class MemoryLessLiveData<T> : MutableLiveData<T>() {
 
     private val singleDataEvent = mutableLiveDataOf<SingleLiveDataEvent<T>>()
 
-    private val observerMap = mutableMapOf<Observer<in T>, SingleLiveEventObserver<T>>()
+    @VisibleForTesting
+    val observerMap = mutableMapOf<Observer<in T>, SingleLiveEventObserver<T>>()
 
     private val observers: MutableCollection<Observer<in T>> get() = observerMap.keys
 

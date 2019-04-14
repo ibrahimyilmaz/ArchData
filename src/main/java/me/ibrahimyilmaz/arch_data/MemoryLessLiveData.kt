@@ -13,13 +13,13 @@ internal class MemoryLessLiveData<T> : MutableLiveData<T>() {
     private val observers: MutableCollection<Observer<in T>> get() = observerMap.keys
 
     override fun observe(owner: LifecycleOwner, observer: Observer<in T>) {
-        val singleEventObserver = singleEventObserverOf(observer)
+        val singleEventObserver = singleEventObserverOf(owner, observer)
         observerMap[observer] = singleEventObserver
         singleDataEvent.observe(owner, singleEventObserver)
     }
 
     override fun observeForever(observer: Observer<in T>) {
-        val singleEventObserver = singleEventObserverOf(observer)
+        val singleEventObserver = singleEventObserverOf(null, observer)
         observerMap[observer] = singleEventObserver
         singleDataEvent.observeForever(singleEventObserver)
     }
@@ -31,7 +31,9 @@ internal class MemoryLessLiveData<T> : MutableLiveData<T>() {
     }
 
     override fun removeObservers(owner: LifecycleOwner) {
-        observerMap.clear()
+        observerMap.values.filter { it.lifecycleOwner == owner }
+                .map { it.observer }
+                .forEach { observerMap.remove(it) }
         singleDataEvent.removeObservers(owner)
     }
 

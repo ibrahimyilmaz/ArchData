@@ -52,8 +52,19 @@ Usage
 Download
 --------
 
-Coming soon...
-
+Maven:
+```xml
+<dependency>
+	<groupId>me.ibrahimyilmaz</groupId>
+	<artifactId>archdata</artifactId>
+	<version>0.0.1-alpha</version>
+	<type>pom</type>
+</dependency>
+```
+Gradle:
+```groovy
+implementation 'me.ibrahimyilmaz:archdata:0.0.1-alpha'
+```
 
 License
 -------

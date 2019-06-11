@@ -55,15 +55,15 @@ Download
 Maven:
 ```xml
 <dependency>
-	<groupId>me.ibrahimyilmaz</groupId>
-	<artifactId>archdata</artifactId>
-	<version>0.0.1-alpha</version>
-	<type>pom</type>
+  <groupId>me.ibrahimyilmaz</groupId>
+  <artifactId>ArchData</artifactId>
+  <version>0.0.1-alpha</version>
+  <type>pom</type>
 </dependency>
 ```
 Gradle:
 ```groovy
-implementation 'me.ibrahimyilmaz:archdata:0.0.1-alpha'
+compile 'me.ibrahimyilmaz:ArchData:0.0.1-alpha'
 ```
 
 License

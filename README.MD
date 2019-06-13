@@ -4,16 +4,16 @@ ArchData
 
 ArchData provides two missing LiveData of Android Lifecycle Component.
 
-MutableLiveData shares only last state to its new observers when they start to observe.
+`MutableLiveData` shares only last state to its new observers when they start to observe.
 
 But in some cases, either these observers may want to do fresh start or they want to get all previous states.
 
-PublishLiveData and ReplayLiveData types are extensions of MutableLiveData.
+`PublishLiveData` and `ReplayLiveData` types are extensions of MutableLiveData.
 
 Basically:
 
-* PublishLiveData is MutableLiveData, which only notify its observers if there is an event after their starting of observation.
-* ReplayLiveData is MutableLiveData, which only notify its observers for all previous events happened before their observation starts.
+* `PublishLiveData` is `MutableLiveData`, which only notify its observers if there is an event after their starting of observation.
+* `ReplayLiveData` is `MutableLiveData`, which only notify its observers for all previous events happened before their observation starts.
 
 
 Usage

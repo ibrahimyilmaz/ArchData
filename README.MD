@@ -57,13 +57,13 @@ Maven:
 <dependency>
   <groupId>me.ibrahimyilmaz</groupId>
   <artifactId>ArchData</artifactId>
-  <version>0.0.1-alpha</version>
+  <version>0.0.2-alpha</version>
   <type>pom</type>
 </dependency>
 ```
 Gradle:
 ```groovy
-compile 'me.ibrahimyilmaz:ArchData:0.0.1-alpha'
+compile 'me.ibrahimyilmaz:ArchData:0.0.2-alpha'
 ```
 
 License

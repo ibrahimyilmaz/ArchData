@@ -12,7 +12,7 @@ buildscript {
 
         publishedGroupId = 'me.ibrahimyilmaz'
         libraryName = 'ArchData'
-        artifact = 'archdata'
+        artifact = 'ArchData'
 
         libraryDescription = 'LiveData types for Publishing and Replaying Data'
 
@@ -200,10 +200,11 @@ artifacts {
 
 
 bintray {
-    user = System.getenv('bintray.user')
-    key = System.getenv('bintray.apikey')
+    user = System.getenv('bintray_user')
+    key = System.getenv('bintray_apikey')
 
     configurations = ['archives']
+    System.out.println('archives')
     pkg {
         repo = bintrayRepo
         name = bintrayName

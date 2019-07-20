@@ -1,4 +1,6 @@
 [![Build Status](https://travis-ci.org/ibrahimyilmaz/ArchData.svg?branch=master)](https://travis-ci.org/ibrahimyilmaz/ArchData)
+
+[ ![Download](https://api.bintray.com/packages/ibrahimyilmaz/ArchData/ArchData/images/download.svg) ](https://bintray.com/ibrahimyilmaz/ArchData/ArchData/_latestVersion)
 ArchData
 =======
 

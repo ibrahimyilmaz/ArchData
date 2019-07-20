@@ -43,3 +43,21 @@ install:
 script:
 - ./gradlew check
 
+jobs:
+  include:
+    - stage: check
+      name: "Check Push"
+      script: ./gradlew check
+    - stage: test
+      name: "Run Tests"
+      script: ./gradlew test
+    - stage: deploy
+      name: "Deploy to Bintray"
+      script: ./gradlew bintrayUpload
+
+
+stages:
+  - check
+  - test
+  - name: deploy
+    if: branch = master

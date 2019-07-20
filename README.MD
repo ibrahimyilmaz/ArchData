@@ -2,7 +2,7 @@
 ArchData
 =======
 
-ArchData provides two missing LiveData of Android Lifecycle Component.
+ArchData provides two missing LiveData of Android Lifecycle Component and useful extension functions.
 
 `MutableLiveData` shares only last state to its new observers when they start to observe.
 
@@ -14,6 +14,10 @@ Basically:
 
 * `PublishLiveData` is `MutableLiveData`, which only notify its observers if there is an event after their starting of observation.
 * `ReplayLiveData` is `MutableLiveData`, which only notify its observers for all previous events happened before their observation starts.
+
+Extension Functions:
+
+* `nonNullObserve` is extension function, which eliminates nullable invokes of Observer.
 
 
 Usage
@@ -27,12 +31,12 @@ Usage
     ```kotlin
     val liveData = PublishLiveData<String>();
     // observer1 will receive all events
-    liveData.observe(lifeCycleOwner,observer1);
-    liveData.postValue("one");
-    liveData.postValue("two");
+    liveData.observe(lifeCycleOwner,observer1)
+    liveData.postValue("one")
+    liveData.postValue("two")
     // observer2 will only receive "three"
-    liveData.observe(lifeCycleOwner,observer2);
-    liveData.postValue("three");
+    liveData.observe(lifeCycleOwner,observer2)
+    liveData.postValue("three")
     ```
 
  *  **`ReplayLiveData`**
@@ -40,14 +44,29 @@ Usage
     LiveData that buffers all items it observes and replays them to any `Observer` that subscribes.
 
     ```kotlin
-    val liveData =  ReplayLiveData<String>();
-    liveData.postValue("one");
-    liveData.postValue("two");
-    liveData.postValue("three");
+    val liveData =  ReplayLiveData<String>()
+    liveData.postValue("one")
+    liveData.postValue("two")
+    liveData.postValue("three")
     // both of the following will get the events from above
-    liveData.observe(lifeCycleOwner,observer1);
-    liveData.postValue(lifeCycleOwner,observer2);
+    liveData.observe(lifeCycleOwner,observer1)
+    liveData.postValue(lifeCycleOwner,observer2)
     ```
+    
+    *  **`nonNullObserve`**
+    
+        LiveData that buffers all items it observes and replays them to any `Observer` that subscribes.
+    
+        ```kotlin
+        viewModel.liveData.nonNullObserve(lifeCycleOwner,::methodInYourObserverClass)
+        
+        ...
+ 
+        fun methodInYourObserverClass(any: AnyParameter){
+           //Do something good!.
+        }
+ 
+        ```
 
 Download
 --------

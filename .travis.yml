@@ -55,7 +55,6 @@ jobs:
       name: "Deploy to Bintray"
       script: ./gradlew bintrayUpload
 
-
 stages:
   - check
   - test

@@ -58,11 +58,15 @@ Usage
         LiveData that buffers all items it observes and replays them to any `Observer` that subscribes.
     
         ```kotlin
-        viewModel.liveData.nonNullObserve(lifeCycleOwner,::methodInYourObserverClass)
+        
+        val liveData = MutableLiveData<String>()
+        ...
+ 
+        viewModel.liveData.nonNullObserve(lifeCycleOwner,::onLiveDataEvent)
         
         ...
  
-        fun methodInYourObserverClass(any: AnyParameter){
+        fun onLiveDataEvent(event: String){
            //Do something good!.
         }
  

@@ -55,24 +55,24 @@ Usage
     liveData.postValue(lifeCycleOwner,observer2)
     ```
     
-    *  **`nonNullObserve`**
+ *  **`nonNullObserve`**
     
-        LiveData that buffers all items it observes and replays them to any `Observer` that subscribes.
+    LiveData that buffers all items it observes and replays them to any `Observer` that subscribes.
+
+    ```kotlin
     
-        ```kotlin
-        
-        val liveData = MutableLiveData<String>()
-        ...
- 
-        viewModel.liveData.nonNullObserve(lifeCycleOwner,::onLiveDataEvent)
-        
-        ...
- 
-        fun onLiveDataEvent(event: String){
-           //Do something good!.
-        }
- 
-        ```
+    val liveData = MutableLiveData<String>()
+    ...
+
+    viewModel.liveData.nonNullObserve(lifeCycleOwner,::onLiveDataEvent)
+    
+    ...
+
+    fun onLiveDataEvent(event: String){
+       //Do something good!.
+    }
+
+    ```
 
 Download
 --------

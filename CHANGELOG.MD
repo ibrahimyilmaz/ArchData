@@ -1,9 +1,11 @@
 # Changelog
 
-## [Unreleased]
+## [Development]
+- ChangeLog updated for Non Null Observe.
 
 ## Bursa(0.0.2)
 - Non Null Observe extension method is added.
+
 ## Bursa(0.0.1)
 - Bintray Publish
 - PublishLiveData and ReplayLiveData implemented

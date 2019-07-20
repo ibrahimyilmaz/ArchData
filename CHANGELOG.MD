@@ -1,6 +1,7 @@
 # Changelog
 
 ## [Development]
+- ChangeLog format fixed.
 
 ## Bursa(0.0.3)
 - ChangeLog updated for Non Null Observe.

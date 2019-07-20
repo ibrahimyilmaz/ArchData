@@ -1,6 +1,7 @@
 # Changelog
 
 ## [Development]
+- ChangeLog updated for Bintray Download.
 - ChangeLog format fixed.
 
 ## Bursa(0.0.3)

@@ -1,6 +1,7 @@
 # Changelog
 
 ## [Development]
+- LiveDataAction implementation.
 - ChangeLog updated for Bintray Download.
 - ChangeLog format fixed.
 

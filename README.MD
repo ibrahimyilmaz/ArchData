@@ -21,6 +21,10 @@ Extension Functions:
 
 * `nonNullObserve` is extension function, which eliminates nullable invokes of Observer.
 
+LiveDataAction:
+* `LiveDataAction` is special object type for LiveData,which enables observer can listen LiveData object without parameter.
+It is useful when Action/Command use cases.
+
 
 Usage
 -----
@@ -57,8 +61,7 @@ Usage
     
  *  **`nonNullObserve`**
     
-    LiveData that buffers all items it observes and replays them to any `Observer` that subscribes.
-
+    observe method which eliminates nullable invocation of observers.
     ```kotlin
     
     val liveData = MutableLiveData<String>()
@@ -73,6 +76,24 @@ Usage
     }
 
     ```
+ *  **`LiveDataAction`**
+     
+    Object Type which enables invocation listener methods without parameter
+ 
+     ```kotlin
+     
+     val liveData = MutableLiveData<LiveDataAction>()
+     ...
+ 
+     viewModel.liveData.nonNullObserve(lifeCycleOwner,::onLiveDataAction)
+     
+     ...
+ 
+     fun onLiveDataEvent(){
+        //Do something really good!.
+     }
+ 
+     ```
 
 Download
 --------

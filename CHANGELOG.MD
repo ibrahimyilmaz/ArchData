@@ -2,8 +2,13 @@
 
 ## [Development]
 
+## Bursa(0.0.4)
+- LiveDataAction implementation.
+- Readme updated for Bintray Download.
+- Readme format fixed.
+
 ## Bursa(0.0.3)
-- ChangeLog updated for Non Null Observe.
+- Readme updated for Non Null Observe.
 
 ## Bursa(0.0.2)
 - Non Null Observe extension method is added.

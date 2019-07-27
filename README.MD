@@ -1,4 +1,6 @@
 [![Build Status](https://travis-ci.org/ibrahimyilmaz/ArchData.svg?branch=master)](https://travis-ci.org/ibrahimyilmaz/ArchData)
+[ ![Download](https://api.bintray.com/packages/ibrahimyilmaz/ArchData/ArchData/images/download.svg) ](https://bintray.com/ibrahimyilmaz/ArchData/ArchData/_latestVersion)
+
 ArchData
 =======
 
@@ -18,6 +20,10 @@ Basically:
 Extension Functions:
 
 * `nonNullObserve` is extension function, which eliminates nullable invokes of Observer.
+
+LiveDataAction:
+* `LiveDataAction` is special object type for LiveData,which enables observer can listen LiveData object without parameter.
+It is useful when Action/Command use cases.
 
 
 Usage
@@ -53,24 +59,41 @@ Usage
     liveData.postValue(lifeCycleOwner,observer2)
     ```
     
-    *  **`nonNullObserve`**
+ *  **`nonNullObserve`**
     
-        LiveData that buffers all items it observes and replays them to any `Observer` that subscribes.
+    observe method which eliminates nullable invocation of observers.
+    ```kotlin
     
-        ```kotlin
-        
-        val liveData = MutableLiveData<String>()
-        ...
+    val liveData = MutableLiveData<String>()
+    ...
+
+    viewModel.liveData.nonNullObserve(lifeCycleOwner,::onLiveDataEvent)
+    
+    ...
+
+    fun onLiveDataEvent(event: String){
+       //Do something good!.
+    }
+
+    ```
+ *  **`LiveDataAction`**
+     
+    Object Type which enables invocation listener methods without parameter
  
-        viewModel.liveData.nonNullObserve(lifeCycleOwner,::onLiveDataEvent)
-        
-        ...
+     ```kotlin
+     
+     val liveData = MutableLiveData<LiveDataAction>()
+     ...
  
-        fun onLiveDataEvent(event: String){
-           //Do something good!.
-        }
+     viewModel.liveData.nonNullObserve(lifeCycleOwner,::onLiveDataAction)
+     
+     ...
  
-        ```
+     fun onLiveDataEvent(){
+        //Do something really good!.
+     }
+ 
+     ```
 
 Download
 --------
@@ -80,13 +103,13 @@ Maven:
 <dependency>
   <groupId>me.ibrahimyilmaz</groupId>
   <artifactId>ArchData</artifactId>
-  <version>0.0.3</version>
+  <version>0.0.4</version>
   <type>pom</type>
 </dependency>
 ```
 Gradle:
 ```groovy
-compile 'me.ibrahimyilmaz:ArchData:0.0.3'
+compile 'me.ibrahimyilmaz:ArchData:0.0.4'
 ```
 
 License

@@ -4,6 +4,7 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.Observer
 import com.nhaarman.mockitokotlin2.inOrder
 import com.nhaarman.mockitokotlin2.mock
+import junit.framework.Assert.assertEquals
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -83,6 +84,7 @@ class ReplayLiveDataTest {
 
         liveData.postValue(6)
 
+        //THEN
         val inOrderVerifier = inOrder(observer)
         inOrderVerifier.verify(observer).onChanged(1)
         inOrderVerifier.verify(observer).onChanged(2)
@@ -94,6 +96,18 @@ class ReplayLiveDataTest {
         inOrderVerifier.verify(observer).onChanged(5)
         inOrderVerifier.verify(observer).onChanged(6)
         inOrderVerifier.verifyNoMoreInteractions()
+    }
+
+    @Test
+    fun should_set_the_value_of_the_replay_livedata() {
+        //GIVEN
+        val value = 3
+
+        //WHEN
+        liveData.setValue(value)
+
+        //THEN
+        assertEquals(liveData.value, value)
     }
 
 }

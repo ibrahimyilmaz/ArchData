@@ -42,4 +42,16 @@ class MemoryLessLiveDataTest {
         assertEquals(false, containsAnyObserverForLifeCycleOwner)
         assertEquals(true, containsAnyObserverForLifeCycleOwner2)
     }
+
+    @Test
+    fun should_set_the_value_of_the_memoryless_livedata() {
+        // GIVEN
+        val value = 3
+
+        // WHEN
+        liveData.setValue(value)
+
+        // THEN
+        assertEquals(liveData.value, value)
+    }
 }

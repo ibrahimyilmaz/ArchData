@@ -19,7 +19,7 @@ buildscript {
         siteUrl = 'https://github.com/ibrahimyilmaz/ArchData'
         gitUrl = 'https://github.com/ibrahimyilmaz/ArchData.git'
 
-        libraryVersion = '0.0.4'
+        libraryVersion = '0.0.5'
 
         developerId = 'ibrahimyilmaz'
         developerName = 'Ibrahim Yilmaz'

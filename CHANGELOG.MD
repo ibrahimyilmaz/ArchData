@@ -1,6 +1,7 @@
 # Changelog
 
 ## [Development]
+- Fix: value get null issue fixed. 
 
 ## Bursa(0.0.4)
 - LiveDataAction implementation.

@@ -1,9 +1,9 @@
 package me.ibrahimyilmaz.arch_data
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
 import com.nhaarman.mockitokotlin2.*
+import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -144,4 +144,16 @@ class PublishLiveDataTest {
         inOrderVerifier.verifyNoMoreInteractions()
     }
 
+
+    @Test
+    fun should_set_the_value_of_the_publish_livedata() {
+        //GIVEN
+        val value = 3
+
+        //WHEN
+        liveData.setValue(value)
+
+        //THEN
+        assertEquals(liveData.value, value)
+    }
 }

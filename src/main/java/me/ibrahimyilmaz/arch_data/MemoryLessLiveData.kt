@@ -46,5 +46,6 @@ internal class MemoryLessLiveData<T> : MutableLiveData<T>() {
         singleDataEvent.value = SingleLiveDataEvent(observers, value)
     }
 
+    override fun getValue(): T? = singleDataEvent.value?.peekContent()
 }
 
